@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <main>
+            <div class="progress-outer">
+                <div class="progress-enter">
+                    <div class="progress-bg"></div>
+                </div>
+            </div>
+        </main>
+
+        <style>
+            main {
+                width: 100%;
+                padding: 80px 0px;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-around;
+            }
+            .progress-outer {
+                width: 60%;
+                height: 12px;
+                overflow: hidden;
+                border-radius: 8px;
+                position: relative;
+            }
+            .progress-enter {
+                height: inherit;
+                background: rgba(180, 160, 120, 0.2);
+            }
+            .progress-bg {
+                width: 60%;
+                height: inherit;
+                border-radius: 6px;
+                background: repeating-linear-gradient(
+                    -45deg,
+                    /*偏移角度*/ #d9cfbb 25%,
+                    #c3b393 0,
+                    #c3b393 50%,
+                    #d9cfbb 0,
+                    #d9cfbb 75%,
+                    #c3b393 0 /* 创建一个由线性渐变组成的<image>*/
+                );
+                background-size: 16px 16px;
+                animation: panoramic 20s linear infinite;
+            }
+            @keyframes panoramic {
+                to {
+                    background-position: 200% 0;
+                }
+            }
+        </style>
+    </body>
+</html>
