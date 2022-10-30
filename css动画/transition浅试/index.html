@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>transition</title>
+    </head>
+    <body>
+        <button>css transition</button>
+
+        <style>
+            /**
+           *可动画属性一般是可以用数字表示的属性,
+           *背景,边框类型这些无法使用
+          */
+            button {
+                height: 90px;
+                width: 290px;
+                font-size: 28px;
+                color: white;
+                border: none;
+                background-color: blue;
+                /* transition-property: all; /*转换性质 对象为所写的转换目标 可以用all代替: background-color color width */
+                /* transition-duration: 3000ms; 持续时间 */
+                /* transition-delay: 1s; 转换等待时间 */
+                /**
+                 *也可以用transition代替 第一个为对象,第二个为完成时间,第三个为速度,第四个为延迟几秒开始
+                */
+                transition: background-color 1s ease 2s, color 2s ease-in 3s, border-radius 3s ease-in-out 5s;
+            }
+            button:hover {
+                background-color: green;
+                color: black;
+                border-radius: 50%;
+            }
+        </style>
+    </body>
+</html>
