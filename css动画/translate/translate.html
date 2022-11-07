@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <img src="./20220929173552.jpg" alt="" />
+
+        <style>
+            img {
+                width: 300px;
+                display: block;
+                margin: auto;
+                margin-top: 200px;
+                transition: transform 2s;
+                transform-origin: 30% 80%; /*改变元素的中心点,可以直接用top left位置组合，也可以用百分比*/
+            }
+            img:hover {
+                /* transform: translate(-300px, 300px); translate 可以改变元素的x, y 轴位置 */
+                /* transform: scale(0.5, 0.5); scale可以成比例的改变元素的大小，参照物为元素设置的本身大小 */
+                transform: rotate(0.5turn); /*rotate可以旋转元素，两个单位， deg为旋转度数， turn为旋转周数*/
+                /* transform: skew(30deg, 30deg); skew可以水平倾斜元素 */
+            }
+        </style>
+    </body>
+</html>
