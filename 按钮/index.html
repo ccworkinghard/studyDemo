@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <button>Delete</button>
+
+        <script>
+            const button = document.querySelector("button");
+            const timeout = 1000;
+            let deleteTimer;
+            let isHoldingDeleteButton;
+
+            button.addEventListener("mousedown", (e) => {
+                // 监听按钮点击之后需要触发的的事件跟时间
+                isHoldingDeleteButton = true;
+                deleteTimer = setTimeout(() => {
+                    button.innerText = "Deleted";
+                }, timeout);
+            });
+            window.addEventListener("mouseup", (e) => {
+                // 全局监听按钮松开之后的触发的事件
+                if (isHoldingDeleteButton) {
+                    if (deleteTimer) {
+                        clearTimeout(deleteTimer);
+                    }
+                    button.innerText = "Delete";
+                }
+            });
+        </script>
+
+        <style>
+            body {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                min-height: 100vh;
+                font-size: 15px;
+            }
+            button {
+                display: inline-block;
+                font-size: 3rem;
+                background-color: #fecaca;
+                color: #dc2626;
+                border: 2px solid #fca5a5;
+                border-radius: 0.5rem;
+                padding: 0.8rem 2rem;
+            }
+            button:hover {
+                border-color: #ef4444;
+                cursor: pointer;
+            }
+            button:active {
+                /*按钮点击之后触发的动作*/
+                background-image: linear-gradient(to right, #fca5a5 0%, #fca5a5 50%, #fecaca 50%, #fecaca 100%);
+                background-size: 200% 100%; /*跨度设为两百，方便调整背景颜色的位置*/
+                background-position: 100%;
+                animation: 1s confirmation ease-out forwards;
+            }
+            @keyframes confirmation {
+                from {
+                    background-position: 100%;
+                }
+                to {
+                    background-position: 0%;
+                }
+            }
+        </style>
+    </body>
+</html>
